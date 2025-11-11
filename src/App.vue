@@ -1,29 +1,51 @@
 <script setup>
+import Navbar from './components/Navbar.vue';
+import { RouterView } from 'vue-router';
+import Footer from "./components/Footer.vue";
 
-  const name = "Mariushkuta";
-
-  import {onMounted, onUpdated} from "vue";
-  onMounted(() => {
-    console.log("onMounted()");
-  });
-
-  onUpdated(() => {
-    console.log("onUpdated()");
-  });
 
 </script>
 
 <template>
-  <h1>You did it {{name}}!</h1>
-  <p>
-    Visit <a href="https://vuejs.org/" target="_blank" rel="noopener">vuejs.org</a> to read the
-    documentation
-  </p>
-  
-  <button @click="console.log('Why didn\'t you listen?')">Dont click me</button>
-  <br><br>
-  
-  <input type="text" @change="console.log('input changed')"/>
+  <main>
+    <Navbar />
+    <div class="main-container">
+      <RouterView />
+    </div>
+    <Footer />
+  </main>
+
 </template>
 
-<style scoped></style>
+<style>
+:root {
+  --red: #d90c00ff;
+  /* --dark-blue: #1c2541ff; */
+  --dark-blue: rgb(36, 43, 64);
+  /* --grayish-blue: #3a506bff; */
+  --grayish-blue: #3c5069;
+  --light-blue: #bedeecff;
+  --off-white: #e9f9ffff;
+
+  font-size: 16px;
+}
+
+*,
+*::before,
+*::after {
+  line-height: 1;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+main {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-container {
+  flex: 1 1 auto;
+}
+</style>
