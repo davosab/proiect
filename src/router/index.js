@@ -4,7 +4,7 @@ import Listings from '../views/Listings.vue';
 import ListingDetails from "@/views/ListingDetails.vue";
 
 const router = createRouter({
-  history: createWebHistory("/proiect/"),
+  history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {path: "/", component: Home}, 
     {path: "/listings", component: Listings},
