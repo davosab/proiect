@@ -13,7 +13,7 @@
 .searchbar {
   border: 1px solid black;
   display: flex;
-
+  background: white;
 }
 input {
   border-radius: 0;

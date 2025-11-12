@@ -7,17 +7,18 @@ import Footer from "./components/Footer.vue";
 </script>
 
 <template>
-  <main>
+  <div class="main-app-content">
     <Navbar />
     <div class="main-container">
       <RouterView />
     </div>
     <Footer />
-  </main>
+  </div>
 
 </template>
 
 <style>
+@import "tailwindcss";
 :root {
   --red: #d90c00ff;
   /* --dark-blue: #1c2541ff; */
@@ -25,7 +26,8 @@ import Footer from "./components/Footer.vue";
   /* --grayish-blue: #3a506bff; */
   --grayish-blue: #3c5069;
   --light-blue: #bedeecff;
-  --off-white: #e9f9ffff;
+  /* --off-white: #e9f9ffff; */
+  --off-white: rgb(242, 251, 254);
 
   font-size: 16px;
 }
@@ -39,7 +41,7 @@ import Footer from "./components/Footer.vue";
   margin: 0;
 }
 
-main {
+.main-app-content {
   min-height: 100vh;
   display: flex;
   flex-direction: column;

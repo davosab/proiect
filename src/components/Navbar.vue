@@ -3,15 +3,15 @@ import Logo from './Logo.vue';
 </script>
 
 <template>
-  
-<nav class="nav">
-  <Logo />
-  <div class="container">
-    <div class="profile"></div>
-    <button class="add-btn">Add new listing</button>
-  </div>
-</nav>
-  
+
+  <nav class="nav">
+    <Logo />
+    <div class="nav-links-container">
+      <div class="profile"></div>
+      <button class="add-btn">Add new listing</button>
+    </div>
+  </nav>
+
 </template>
 
 <style scoped>
@@ -22,11 +22,13 @@ import Logo from './Logo.vue';
   align-items: center;
   padding: 0.5rem 2rem;
 }
-.container {
+
+.nav-links-container {
   display: flex;
   gap: 2rem;
   align-items: center;
 }
+
 .profile {
   height: 2.5rem;
   width: 2.5rem;
@@ -34,9 +36,12 @@ import Logo from './Logo.vue';
   background: white;
   border: 1px solid black;
 }
+
 .add-btn {
   padding: 0.5em 1em;
+  background: gray;
 }
+
 :is(.profile, .add-btn):hover {
   cursor: pointer;
 }
