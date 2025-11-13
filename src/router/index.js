@@ -10,6 +10,9 @@ import Profile from "@/views/Profile.vue";
 import AddListing from "@/views/AddListing.vue";
 import MyListings from "@/views/MyListings.vue";
 import EditListing from "@/views/EditListing.vue";
+import Saved from "@/views/Saved.vue";
+import Messages from "@/views/Messages.vue";
+import SellerListings from "@/views/SellerListings.vue";
 
 export const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -25,6 +28,9 @@ export const router = createRouter({
     {path: "/add-listing", component: AddListing},
     {path: "/my-listings", component: MyListings},
     {path: "/edit-listing", component: EditListing},
+    {path: "/saved", component: Saved},
+    {path: "/messages", component: Messages},
+    {path: "/seller-listings", component: SellerListings},
   ]
 })
 

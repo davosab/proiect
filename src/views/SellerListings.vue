@@ -5,7 +5,7 @@ import MenuTabs from "@/components/MenuTabs.vue";
 </script>
 
 <template>
-  <Header title="My Listings"/>
+  <Header title="More from seller"/>
   <MenuTabs />
   
   <main>

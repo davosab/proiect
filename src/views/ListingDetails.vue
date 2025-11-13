@@ -1,5 +1,6 @@
 <script setup>
 import { listings as refListings } from '@/listings';
+import DetailsCard from '@/components/DetailsCard.vue';
 const props = defineProps(["id"]);
 const listings = refListings.value;
 const car = listings.find(car => car.id == props.id);
@@ -8,7 +9,7 @@ const car = listings.find(car => car.id == props.id);
 
 <template>
   <div class="hero">
-    <div class="main">
+    <!-- <div class="main">
       <div class="carousel"></div>
       <div class="info-card">
         <h2>{{ car.title }}</h2>
@@ -23,7 +24,8 @@ const car = listings.find(car => car.id == props.id);
           <button>Show tel. number</button>
         </div>
       </div>
-    </div>
+    </div> -->
+    <DetailsCard :car="car" />
   </div>
 
   <section class="description">
@@ -47,38 +49,6 @@ const car = listings.find(car => car.id == props.id);
   background: var(--off-white);
 }
 
-.main {
-  display: flex;
-  background: white;
-}
-
-.carousel {
-  background: gray;
-  width: min(600px, 60vw);
-  aspect-ratio: 100 / 60;
-}
-
-.info-card {
-  padding: 1rem 1.5rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-.price {
-  margin-block: auto;
-  font-size: 1.25rem;
-}
-.currency {
-  font-size: 0.8rem;
-}
-.compare {
-  font-size: 0.8rem;
-}
-.contact-btns {
-  display: grid;
-  grid-template-rows: 1fr 1fr;
-  gap: 0.5rem;
-}
 section.description {
   padding: 3rem 4rem;  
   display: flex;
@@ -86,10 +56,6 @@ section.description {
   gap: 2rem;
 }
 
-h2 {
-  font-size: 1.5rem;
-  font-weight: bold;
-}
 h3 {
   font-size: 1.25rem;
   font-weight: bold;
