@@ -9,7 +9,8 @@ const showNumber = ref(false);
   <div class="main">
     <div class="carousel"></div>
     <div class="info-card">
-      <h2>{{ car.title }}</h2>
+      <div class="save">🤍 save</div>
+      <h2>{{ car.title }}</h2> 
       <p>Used - {{ car.year }}</p>
       <p class="price">
         {{ car.price }}
@@ -48,7 +49,9 @@ const showNumber = ref(false);
   gap: 0.5rem;
   width: 300px;
 }
-
+.save {
+  cursor: pointer;
+}
 .price {
   margin-block: auto;
   font-size: 1.25rem;

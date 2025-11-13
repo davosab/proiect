@@ -9,22 +9,6 @@ const car = listings.find(car => car.id == props.id);
 
 <template>
   <div class="hero">
-    <!-- <div class="main">
-      <div class="carousel"></div>
-      <div class="info-card">
-        <h2>{{ car.title }}</h2>
-        <p>Used - {{ car.year }}</p>
-        <p class="price">
-          {{ car.price }}
-          <span class="currency">USD</span>
-        </p>
-        <button class="compare">Add to compare</button>
-        <div class="contact-btns">
-          <button>Message</button>
-          <button>Show tel. number</button>
-        </div>
-      </div>
-    </div> -->
     <DetailsCard :car="car" />
   </div>
 
