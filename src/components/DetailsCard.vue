@@ -1,7 +1,8 @@
 <script setup>
 import Button from './Button.vue';
-
+import { ref } from 'vue';
 defineProps(["car"]);
+const showNumber = ref(false);
 </script>
 
 <template>
@@ -17,10 +18,12 @@ defineProps(["car"]);
       <RouterLink to="/seller-listings">
         <Button text="More from seller" class="btn-small" />
       </RouterLink>
-      <Button text="Add to compare" class="btn-small" />
+      <RouterLink to="/compare">
+        <Button text="Add to compare" class="btn-small" />
+      </RouterLink>
       <div class="contact-btns">
         <Button text="Message" />
-        <Button text="Show tel. number" />
+        <Button @click="showNumber = true" :text="showNumber ? '0772 068 318' : 'Show tel. number'" />
       </div>
     </div>
   </div>
@@ -43,6 +46,7 @@ defineProps(["car"]);
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+  width: 300px;
 }
 
 .price {
