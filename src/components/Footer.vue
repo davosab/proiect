@@ -4,7 +4,10 @@
 
 <template>
 <footer>
-  <p>© {{ new Date().getFullYear() }} Motoro. All rights reserved.</p>
+  <p>© {{ new Date().getFullYear() }} Motoro. All rights reserved. | <RouterLink to="/faqs">FAQ's</RouterLink> | <RouterLink to="/terms">Terms & Conditions</RouterLink></p>
+  <p>
+    <RouterLink to="add-listing">Add Listing</RouterLink>
+  </p>
 </footer>
 </template>
 

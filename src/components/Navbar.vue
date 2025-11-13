@@ -7,8 +7,8 @@ import Logo from './Logo.vue';
   <nav class="nav">
     <Logo />
     <div class="nav-links-container">
-      <div class="profile"></div>
-      <button class="add-btn">Add new listing</button>
+      <RouterLink to="/profile" class="profile"></RouterLink>
+      <RouterLink to="/sign-up" class="add-btn">Add new listing</RouterLink>
     </div>
   </nav>
 

@@ -1,15 +1,15 @@
 <script setup>
-const props = defineProps(["car"]);
-const {title, fuel, year, km, chasis, price} = props.car;
+defineProps(["car"]);
+const emit = defineEmits(["click"]);
 </script>
 
 <template>
-<div class="card">
+<div class="card" @click="$emit('click', car.id)">
   <div class="image"></div>
   <p class="when">Posted 23 hours ago</p>
-  <h4>{{ title }}</h4>
-  <p class="info">{{ year }} | {{ fuel }} | {{ km }} | {{ chasis }}</p>
-  <p class="price">{{ price }}</p>
+  <h4>{{ car.title }}</h4>
+  <p class="info">{{ car.year }} | {{ car.fuel }} | {{ car.km }} | {{ car.chasis }}</p>
+  <p class="price">{{ car.price }}</p>
 </div>
 </template>
 
@@ -20,6 +20,7 @@ const {title, fuel, year, km, chasis, price} = props.car;
   padding: 0.5rem;
   gap: 0.25rem;
   background: white;
+  cursor: pointer;
 }
 .image {
   min-height: 60px;

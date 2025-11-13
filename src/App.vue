@@ -1,24 +1,34 @@
 <script setup>
 import Navbar from './components/Navbar.vue';
-import { RouterView } from 'vue-router';
+import { RouterView, useRoute } from 'vue-router';
 import Footer from "./components/Footer.vue";
 
+const route = useRoute();
 
 </script>
 
 <template>
   <div class="main-app-content">
-    <Navbar />
+    <div>
+      <div v-if="route.path === '/sign-up'"></div>
+      <div v-else-if="route.path === '/log-in'"></div>
+      <Navbar v-else />
+    </div>
     <div class="main-container">
       <RouterView />
     </div>
-    <Footer />
+    <div>
+      <div v-if="route.path === '/sign-up'"></div>
+      <div v-else-if="route.path === '/log-in'"></div>
+      <Footer v-else />
+    </div>
   </div>
 
 </template>
 
 <style>
 @import "tailwindcss";
+
 :root {
   --red: #d90c00ff;
   /* --dark-blue: #1c2541ff; */
