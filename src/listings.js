@@ -8,7 +8,7 @@ export const listings = ref([
   { id: 5, colour: "red", title: "Volkswagen Passat", fuel: "diesel", year: 2015, km: "90,000km", chasis: "sedan", price: 8990, saved: true },
   { id: 6, colour: "brown", title: "Subaru Impreza WRX", fuel: "petrol", year: 2015, km: "90,000km", chasis: "coupe", price: 25000, saved: true },
   { id: 7, colour: "green", title: "Toyota Hilux", fuel: "petrol", year: 2015, km: "90,000km", chasis: "coupe", price: 24800, saved: false },
-  { id: 8, colour: "blue", title: "Mitsubishi Lancer", fuel: "diesel", year: 2015, km: "90,000km", chasis: "coupe", price: 32000, saved: false },
+  { id: 8, colour: "black", title: "Mitsubishi Lancer", fuel: "diesel", year: 2015, km: "90,000km", chasis: "coupe", price: 32000, saved: false },
   { id: 9, colour: "red", title: "Ford Mondeo", fuel: "diesel", year: 2015, km: "130,000km", chasis: "coupe", price: 7750, saved: false }
 ]);
 

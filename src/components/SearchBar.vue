@@ -14,6 +14,8 @@
   border: 1px solid black;
   display: flex;
   background: white;
+  justify-content: space-between;
+  margin-inline: 2rem;
 }
 input {
   border-radius: 0;
