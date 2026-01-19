@@ -1,6 +1,8 @@
 <script setup>
 import Header from '@/components/Header.vue';
 import MenuTabs from '@/components/MenuTabs.vue';
+import {draftFirstName, draftLastName, updateUserInfo } from '@/userProfile';
+
 </script>
 
 <template>
@@ -16,10 +18,15 @@ import MenuTabs from '@/components/MenuTabs.vue';
       <div class="form-container">
         <h2 class="form-title">Contact Information</h2>
 
-        <form class="contact-form">
+        <form class="contact-form" @submit.prevent="updateUserInfo">
           <div class="form-group">
-            <label for="name">Name</label>
-            <input type="text" id="name" class="form-input" />
+            <label for="fname">First Name</label>
+            <input v-model="draftFirstName" type="text" id="fname" class="form-input" />
+          </div>
+          
+          <div class="form-group">
+            <label for="lname">Last name</label>
+            <input v-model="draftLastName" type="text" id="lname" class="form-input" />
           </div>
 
           <div class="form-group">

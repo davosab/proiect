@@ -1,10 +1,6 @@
 <script setup>
 import Logo from './Logo.vue';
-import { ref, computed } from 'vue';
-
-const firstName = ref("David");
-const lastName = ref("Sabau");
-const fullName = computed(() => `${firstName.value} ${lastName.value}`);
+import { fullName } from '@/userProfile';
 </script>
 
 <template>
