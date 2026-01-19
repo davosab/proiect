@@ -1,20 +1,34 @@
 <script setup>
 import Button from './Button.vue';
 import { ref } from 'vue';
-defineProps(["car"]);
+import { computed } from 'vue';
+
+const { car } = defineProps(["car"]);
 const showNumber = ref(false);
+
+const finalPrice = computed(() => {
+  let price = car.price;
+  let shippingTax = 3000;
+
+  if (car.title.includes("Subaru")) {
+    price += shippingTax;
+  }
+  return price;
+});
 </script>
 
 <template>
-  <div class="main">
+  <div v-if="car" class="main">
     <div class="carousel"></div>
     <div class="info-card">
-      <div class="save">🤍 save</div>
+      <div class="save">{{ car.saved ? "❤️ saved" : "🤍 save" }}</div>
       <h2>{{ car.title }}</h2> 
       <p>Used - {{ car.year }}</p>
       <p class="price">
-        {{ car.price }}
+        ${{ car.price.toLocaleString() }}
         <span class="currency">USD</span>
+        <span class="shipping-note" v-if="car.title.includes('Subaru')"> + shipping = ${{ finalPrice }}</span>
+
       </p>
       <RouterLink to="/seller-listings">
         <Button text="More from seller" class="btn-small" />
@@ -28,6 +42,7 @@ const showNumber = ref(false);
       </div>
     </div>
   </div>
+  <div v-else>Loading car...</div>
 </template>
 
 <style scoped>
@@ -49,9 +64,11 @@ const showNumber = ref(false);
   gap: 0.5rem;
   width: 300px;
 }
+
 .save {
   cursor: pointer;
 }
+
 .price {
   margin-block: auto;
   font-size: 1.25rem;
@@ -59,6 +76,10 @@ const showNumber = ref(false);
 
 .currency {
   font-size: 0.8rem;
+}
+
+.shipping-note {
+  font-size: 0.6em;
 }
 
 .btn-small {

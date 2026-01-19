@@ -1,13 +1,14 @@
 <script setup>
 import ListingsCard from "./ListingsCard.vue"
 import { goToDetails } from '@/router';
-import { listings } from '@/listings';
+
+defineProps(["list"]);
 
 </script>
 
 <template>
   <div class="grid">
-    <ListingsCard @click="goToDetails(car.id)" v-for="(car, index) in listings" :car="car" :key="index" />
+    <ListingsCard @click="goToDetails(car.id)" v-for="(car, index) in list" :car="car" :key="index" />
   </div>
 </template>
 

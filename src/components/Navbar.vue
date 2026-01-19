@@ -1,5 +1,10 @@
 <script setup>
 import Logo from './Logo.vue';
+import { ref, computed } from 'vue';
+
+const firstName = ref("David");
+const lastName = ref("Sabau");
+const fullName = computed(() => `${firstName.value} ${lastName.value}`);
 </script>
 
 <template>
@@ -7,6 +12,7 @@ import Logo from './Logo.vue';
   <nav class="nav">
     <Logo />
     <div class="nav-links-container">
+      Welcome {{ fullName }}!
       <RouterLink to="/profile" class="profile"></RouterLink>
       <RouterLink to="/sign-up" class="add-btn">Add new listing</RouterLink>
     </div>

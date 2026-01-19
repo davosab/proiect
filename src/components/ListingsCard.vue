@@ -5,11 +5,15 @@ const emit = defineEmits(["click"]);
 
 <template>
 <div class="card" @click="$emit('click', car.id)">
-  <div class="image"></div>
+  <div class="image">
+    <div class="heart">
+      {{ car.saved ? "❤️" : "🤍" }}
+    </div>
+  </div>
   <p class="when">Posted 23 hours ago</p>
   <h4>{{ car.title }}</h4>
   <p class="info">{{ car.year }} | {{ car.fuel }} | {{ car.km }} | {{ car.chasis }}</p>
-  <p class="price">{{ car.price }}</p>
+  <p class="price">${{ car.price.toLocaleString() }}</p>
 </div>
 </template>
 
@@ -26,6 +30,14 @@ const emit = defineEmits(["click"]);
   min-height: 60px;
   aspect-ratio: 100 / 60;
   background: gray;
+  position: relative;
+}
+.heart {
+  position: absolute;
+  height: 1.5rem;
+  width: 1.5rem;
+  right: 1rem;
+  top: 1rem;
 }
 .when, .info {
   font-size: 0.75rem;

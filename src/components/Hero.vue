@@ -1,12 +1,13 @@
 <script setup>
 import SearchBar from './SearchBar.vue';
+import { totalSales } from '@/metrics';
 </script>
 
 <template>
 <div class="hero">
   <div class="text">
     <h1>Find your next car!</h1>
-    <p>100 happy buyers daily</p>
+    <p>{{ totalSales }} happy buyers already today!</p>
   </div>
   <SearchBar />
 </div>
