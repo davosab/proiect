@@ -7,8 +7,11 @@ defineProps(["list"]);
 </script>
 
 <template>
-  <div class="grid">
+  <div v-if="list.length > 0" class="grid">
     <ListingsCard @click="goToDetails(car.id)" v-for="(car, index) in list" :car="car" :key="index" />
+  </div>
+  <div v-else class="no-matches-message">
+    No listings match your filters.
   </div>
 </template>
 
@@ -20,5 +23,8 @@ defineProps(["list"]);
   padding: 2rem;
   flex: 1;
   max-width: min(100vw - 280px, 1000px);
+}
+.no-matches-message {
+  padding: 2rem;
 }
 </style>

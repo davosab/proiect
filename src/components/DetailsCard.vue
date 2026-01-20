@@ -21,7 +21,7 @@ const finalPrice = computed(() => {
   <div v-if="car" class="main">
     <div class="carousel"></div>
     <div class="info-card">
-      <div class="save">{{ car.saved ? "❤️ saved" : "🤍 save" }}</div>
+      <div @click="car.saved = !car.saved" class="save">{{ car.saved ? "❤️ saved" : "🤍 save" }}</div>
       <h2>{{ car.title }}</h2> 
       <p>Used - {{ car.year }}</p>
       <p class="price">

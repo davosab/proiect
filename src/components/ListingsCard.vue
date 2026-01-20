@@ -6,7 +6,7 @@ const emit = defineEmits(["click"]);
 <template>
 <div class="card" @click="$emit('click', car.id)">
   <div class="image">
-    <div class="heart">
+    <div class="heart" @click.stop="car.saved = !car.saved">
       {{ car.saved ? "❤️" : "🤍" }}
     </div>
   </div>

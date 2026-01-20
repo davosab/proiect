@@ -25,6 +25,7 @@ watch(selectedColour, (newColour, oldColour, onCleanup) => {
   onCleanup(() => clearTimeout(disappear));
 });
 
+
 </script>
 
 <template>
@@ -41,6 +42,7 @@ watch(selectedColour, (newColour, oldColour, onCleanup) => {
               <option value="black">Black</option>
               <option value="green">Green</option>
               <option value="brown">Brown</option>
+              <option value="gold">Gold</option>
             </select>
           </label>
         </div>
