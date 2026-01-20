@@ -1,6 +1,6 @@
 <script setup>
 import ListingsGrid from "../components/ListingsGrid.vue"
-import { ref, computed } from "vue";
+import { ref, computed, watch } from "vue";
 import { listings } from "@/listings";
 import SearchBar from "@/components/SearchBar.vue";
 
@@ -17,25 +17,38 @@ const filteredCount = computed(() =>
   filteredList.value.length
 );
 
+const filtersJustChanged = ref(false);
+
+watch(selectedColour, (newColour, oldColour, onCleanup) => {
+  filtersJustChanged.value = true;
+  const disappear = setTimeout(() => filtersJustChanged.value = false, 2000);
+  onCleanup(() => clearTimeout(disappear));
+});
+
 </script>
 
 <template>
   <main>
     <aside class="filters">
       <div class="filters-container">
-        <label>
-          Select color:
-          <select v-model="selectedColour">
-            <option value="">All</option>
-            <option value="red">Red</option>
-            <option value="blue">Blue</option>
-            <option value="black">Black</option>
-            <option value="green">Green</option>
-            <option value="brown">Brown</option>
-          </select>
-        </label>
+        <div class="filter">
+          <label>
+            Select colour:
+            <select v-model="selectedColour">
+              <option value="">All</option>
+              <option value="red">Red</option>
+              <option value="blue">Blue</option>
+              <option value="black">Black</option>
+              <option value="green">Green</option>
+              <option value="brown">Brown</option>
+            </select>
+          </label>
+        </div>
       </div>
-      <p class="cars-found">{{ filteredCount }} cars match your filter</p>
+      <div class="filters-messages">
+        <p v-if="filtersJustChanged">Filters applied</p>
+        <p>{{ filteredCount }} cars match your filter</p>
+      </div>
     </aside>
     <div class="search-and-grid">
       <SearchBar />
@@ -60,13 +73,20 @@ main {
   justify-content: space-between;
 }
 
-.filters > * {
+.filter {
   background: rgb(203, 203, 203);
   padding: 0.5em;
   border-radius: 0.2em;
 }
-.cars-found {
+.filters-messages {
   font-size: 0.8em;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
   align-self: flex-start;
+}
+.filters-messages > * {
+  background: rgb(203, 203, 203);
+  padding: 0.2em 0.5em;
 }
 </style>
