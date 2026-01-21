@@ -2,7 +2,9 @@
 import Header from '@/components/Header.vue';
 import MenuTabs from '@/components/MenuTabs.vue';
 import ListingsCard from '@/components/ListingsCard.vue';
-import { savedListings } from '@/listings';
+import { useListingsStore } from '../stores/listings';
+
+const store = useListingsStore();
 </script>
 
 <template>
@@ -10,7 +12,7 @@ import { savedListings } from '@/listings';
 <MenuTabs />
   <div class="bg">
     <div class="grid">
-    <ListingsCard v-for="listing in savedListings" :car="listing" :key="listing.id"/>
+    <ListingsCard v-for="listing in store.savedListings" :car="listing" :key="listing.id"/>
     </div>
   </div>
 </template>

@@ -1,15 +1,16 @@
 <script setup>
 import ListingsGrid from "../components/ListingsGrid.vue"
 import { ref, computed, watch } from "vue";
-import { listings } from "@/listings";
 import SearchBar from "@/components/SearchBar.vue";
+import { useListingsStore } from "../stores/listings";
 
+const store = useListingsStore();
 const selectedColour = ref("");
 
 const filteredList = computed(() => {
-  if (selectedColour.value === "") return listings.value;
+  if (selectedColour.value === "") return store.listings;
 
-  return listings.value.filter(car => car.colour === selectedColour.value)
+  return store.listings.filter(car => car.colour === selectedColour.value)
 
 });
 
@@ -80,6 +81,7 @@ main {
   padding: 0.5em;
   border-radius: 0.2em;
 }
+
 .filters-messages {
   font-size: 0.8em;
   display: flex;
@@ -87,7 +89,8 @@ main {
   gap: 0.5em;
   align-self: flex-start;
 }
-.filters-messages > * {
+
+.filters-messages>* {
   background: rgb(203, 203, 203);
   padding: 0.2em 0.5em;
 }

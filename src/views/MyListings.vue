@@ -2,6 +2,9 @@
 import ListingsGrid from "../components/ListingsGrid.vue"
 import Header from "@/components/Header.vue";
 import MenuTabs from "@/components/MenuTabs.vue";
+import { useListingsStore } from "@/stores/listings";
+
+const store = useListingsStore();
 </script>
 
 <template>
@@ -10,7 +13,7 @@ import MenuTabs from "@/components/MenuTabs.vue";
   
   <main>
     <aside class="filters"></aside>
-    <ListingsGrid />
+    <ListingsGrid :list="store.listings"/>
   </main>
 </template>
 

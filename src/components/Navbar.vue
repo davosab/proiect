@@ -1,6 +1,9 @@
 <script setup>
 import Logo from './Logo.vue';
 import { fullName } from '@/userProfile';
+import { useLoggedStatus } from '@/stores/loggedStatus';
+
+const loggedStore = useLoggedStatus();
 </script>
 
 <template>
@@ -10,7 +13,8 @@ import { fullName } from '@/userProfile';
     <div class="nav-links-container">
       Welcome {{ fullName }}!
       <RouterLink to="/profile" class="profile"></RouterLink>
-      <RouterLink to="/sign-up" class="add-btn">Add new listing</RouterLink>
+      <RouterLink v-if="loggedStore.loggedIn" to="/add-listing" class="add-btn">Add new listing</RouterLink>
+      <RouterLink v-else to="/sign-up" class="add-btn">Add new listing</RouterLink>
     </div>
   </nav>
 

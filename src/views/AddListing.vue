@@ -1,3 +1,22 @@
+<script setup>
+  import { useListingsStore } from '@/stores/listings';
+  import { ref } from 'vue';
+
+  const listingsStore = useListingsStore();
+  const car = ref({
+    id: crypto.randomUUID(), 
+    colour: "", 
+    title: "", 
+    fuel: "", 
+    year: null,
+    km: "", 
+    chassis: "", 
+    price: null, 
+    saved: false, 
+    country: "romania"
+  });
+</script>
+
 <template>
   <div class="add-listing-container">
     <div class="header">
@@ -10,7 +29,7 @@
         <!-- Title Section -->
         <div class="form-section">
           <label class="form-label">Title</label>
-          <input type="text" class="form-input" placeholder="Enter listing title" />
+          <input v-model="car.title" type="text" class="form-input" placeholder="Enter listing title" />
         </div>
 
         <!-- Images Section -->
@@ -30,12 +49,14 @@
     <div class="form-section">
       <label class="form-label">Details</label>
       <div class="details-grid">
-        <input type="text" placeholder="Kilometers" class="detail-input" />
-        <input type="text" placeholder="Fuel" class="detail-input" />
+        <input v-model="car.km" type="text" placeholder="Kilometers" class="detail-input" />
+        <input v-model="car.fuel" type="text" placeholder="Fuel" class="detail-input" />
         <input type="text" placeholder="Gearbox" class="detail-input" />
-        <input type="text" placeholder="Chassis" class="detail-input" />
+        <input v-model="car.chassis" type="text" placeholder="Chassis" class="detail-input" />
         <input type="text" placeholder="Engine Size" class="detail-input" />
         <input type="text" placeholder="Horsepower" class="detail-input" />
+        <input v-model="car.year" type="number" placeholder="Year" class="detail-input" />
+        <input v-model="car.price" type="number" placeholder="Price" class="detail-input" />
       </div>
     </div>
 
@@ -61,7 +82,7 @@
       <button type="button" class="btn btn-cancel">
         Cancel
       </button>
-      <button type="submit" class="btn btn-publish">
+      <button @click="listingsStore.addListing(car)" type="submit" class="btn btn-publish">
         Publish
       </button>
     </div>

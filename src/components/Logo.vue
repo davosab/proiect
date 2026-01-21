@@ -6,7 +6,7 @@ import { RouterLink } from 'vue-router';
 <template>
 
   <div>
-    <RouterLink to="/"> 
+    <RouterLink to="/listings"> 
       <img class="logo" src="../assets/logo-gray.png" alt="Motoro">
     </RouterLink>
   </div>

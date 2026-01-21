@@ -1,18 +1,21 @@
 <script setup>
 defineProps(["car"]);
 const emit = defineEmits(["click"]);
+import {useListingsStore} from "../stores/listings";
+
+const store = useListingsStore();
 </script>
 
 <template>
 <div class="card" @click="$emit('click', car.id)">
   <div class="image">
-    <div class="heart" @click.stop="car.saved = !car.saved">
+    <div class="heart" @click.stop="store.toggleSaved(car.id)">
       {{ car.saved ? "❤️" : "🤍" }}
     </div>
   </div>
   <p class="when">Posted 23 hours ago</p>
   <h4>{{ car.title }}</h4>
-  <p class="info">{{ car.year }} | {{ car.fuel }} | {{ car.km }} | {{ car.chasis }}</p>
+  <p class="info">{{ car.year }} | {{ car.fuel }} | {{ car.km }} | {{ car.chassis }}</p>
   <p class="price">${{ car.price.toLocaleString() }}</p>
 </div>
 </template>

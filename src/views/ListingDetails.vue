@@ -1,9 +1,10 @@
 <script setup>
-import { listings as refListings } from '@/listings';
+import { useListingsStore } from "../stores/listings";
 import DetailsCard from '@/components/DetailsCard.vue';
 const props = defineProps(["id"]);
-const listings = refListings.value;
-const car = listings.find(car => car.id == props.id);
+const store = useListingsStore();
+
+const car = store.listings.find(car => car.id == props.id);
 
 </script>
 

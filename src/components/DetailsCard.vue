@@ -2,16 +2,23 @@
 import Button from './Button.vue';
 import { ref } from 'vue';
 import { computed } from 'vue';
+import { useListingsStore } from "../stores/listings";
+import { useShippingStore } from '@/stores/shipping';
+import { useSettingsStore } from '@/stores/settings';
+
+const listingsStore = useListingsStore();
+const shippingStore = useShippingStore();
+const settingsStore = useSettingsStore();
 
 const { car } = defineProps(["car"]);
 const showNumber = ref(false);
 
 const finalPrice = computed(() => {
   let price = car.price;
-  let shippingTax = 3000;
-
-  if (car.title.includes("Subaru")) {
+  if (car.country != "romania") {
+    let shippingTax = shippingStore.countryTaxes[car.country];
     price += shippingTax;
+    console.log(car.title, shippingTax)
   }
   return price;
 });
@@ -21,13 +28,13 @@ const finalPrice = computed(() => {
   <div v-if="car" class="main">
     <div class="carousel"></div>
     <div class="info-card">
-      <div @click="car.saved = !car.saved" class="save">{{ car.saved ? "❤️ saved" : "🤍 save" }}</div>
-      <h2>{{ car.title }}</h2> 
+      <div @click="listingsStore.toggleSaved(car.id)" class="save">{{ car.saved ? "❤️ saved" : "🤍 save" }}</div>
+      <h2>{{ car.title }}</h2>
       <p>Used - {{ car.year }}</p>
       <p class="price">
         ${{ car.price.toLocaleString() }}
-        <span class="currency">USD</span>
-        <span class="shipping-note" v-if="car.title.includes('Subaru')"> + shipping = ${{ finalPrice }}</span>
+        <span class="currency">{{settingsStore.currency}}</span>
+        <span class="shipping-note" v-if="car.country != 'romania'"> + shipping = ${{ finalPrice }}</span>
 
       </p>
       <RouterLink to="/seller-listings">
