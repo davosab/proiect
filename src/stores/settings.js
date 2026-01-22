@@ -10,6 +10,12 @@ export const useSettingsStore = defineStore("settings", {
   getters: {
     getOtherCurrencies() {
       return this.currencies.filter(c => c != this.currency)
+    },
+    locale() {
+      return `${this.language}-${this.currency}`
+    },
+    isCurrencySupported: (state) => (currency) => {
+      return state.currencies.includes(currency)
     }
   },
 

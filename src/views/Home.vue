@@ -10,7 +10,7 @@ const shippingStore = useShippingStore()
   <div>
     <p style="padding: 2rem">
       We bring cars from
-      <span v-for="(country, index) in shippingStore.countriesWithCars">
+      <span v-for="(country, index) in shippingStore.countriesWithCars" :key="index">
         <span class="country">{{ country }}</span>
         <span v-if="index < shippingStore.countriesWithCars.length - 1">, </span>
       </span>

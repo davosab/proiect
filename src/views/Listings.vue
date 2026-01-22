@@ -3,8 +3,10 @@ import ListingsGrid from "../components/ListingsGrid.vue"
 import { ref, computed, watch } from "vue"
 import SearchBar from "@/components/SearchBar.vue"
 import { useListingsStore } from "../stores/listings"
+import { useSettingsStore } from "@/stores/settings"
 
 const store = useListingsStore()
+const settingsStore = useSettingsStore()
 const selectedColour = ref("")
 
 const filteredList = computed(() => {
@@ -28,6 +30,9 @@ watch(selectedColour, (newColour, oldColour, onCleanup) => {
   <main>
     <aside class="filters">
       <div class="filters-container">
+        <div class="filter">
+          {{ settingsStore.locale }}
+        </div>
         <div class="filter">
           <label>
             Select colour:
