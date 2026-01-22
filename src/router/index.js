@@ -1,5 +1,4 @@
 import { createRouter, createWebHistory } from "vue-router"
-import { useListingsStore } from "@/stores/listings"
 import Home from "../views/Home.vue"
 import Listings from "../views/Listings.vue"
 import ListingDetails from "@/views/ListingDetails.vue"
@@ -20,6 +19,8 @@ import About from "@/views/About.vue"
 import HowItWorks from "@/views/HowItWorks.vue"
 import ThankYou from "@/views/ThankYou.vue"
 import { useLoggedStatus } from "@/stores/loggedStatus"
+import NewPassword from "@/views/NewPassword.vue"
+import ChangeEmail from "@/views/ChangeEmail.vue"
 
 export const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -42,7 +43,9 @@ export const router = createRouter({
     { path: "/contact", component: Contact },
     { path: "/about", component: About },
     { path: "/how-it-works", component: HowItWorks },
-    { path: "/thank-you", component: ThankYou }
+    { path: "/thank-you", component: ThankYou },
+    { path: "/new-password", component: NewPassword },
+    { path: "/change-email", component: ChangeEmail }
   ]
 })
 

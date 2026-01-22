@@ -6,9 +6,19 @@ export const useCredentialsStore = defineStore("credentials", {
     password: "1234"
   }),
 
-  actions: {
+  getters: {
     isValid(email, password) {
       return email == this.email && password == this.password
+    },
+  },
+
+  actions: {
+    resetPassword(newPassword) {
+      this.password = newPassword;
+    },
+
+    changeEmail(newEmail) {
+      this.email = newEmail;
     }
   }
 })
