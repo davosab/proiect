@@ -1,13 +1,13 @@
 <script setup>
 import ListingsGrid from "../components/ListingsGrid.vue"
-import Header from "@/components/Header.vue";
-import MenuTabs from "@/components/MenuTabs.vue";
+import Header from "@/components/Header.vue"
+import MenuTabs from "@/components/MenuTabs.vue"
 </script>
 
 <template>
-  <Header title="More from seller"/>
+  <Header title="More from seller" />
   <MenuTabs />
-  
+
   <main>
     <aside class="filters"></aside>
     <ListingsGrid />

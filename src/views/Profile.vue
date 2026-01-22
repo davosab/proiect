@@ -1,14 +1,13 @@
 <script setup>
-import Header from '@/components/Header.vue';
-import MenuTabs from '@/components/MenuTabs.vue';
-import {draftFirstName, draftLastName, updateUserInfo } from '@/userProfile';
-
+import Header from "@/components/Header.vue"
+import MenuTabs from "@/components/MenuTabs.vue"
+import { draftFirstName, draftLastName, updateUserInfo } from "@/userProfile"
 </script>
 
 <template>
   <div class="profile-container">
-      <Header title="My Profile" />
-      <MenuTabs />
+    <Header title="My Profile" />
+    <MenuTabs />
 
     <div class="content">
       <div class="avatar-section">
@@ -23,7 +22,7 @@ import {draftFirstName, draftLastName, updateUserInfo } from '@/userProfile';
             <label for="fname">First Name</label>
             <input v-model="draftFirstName" type="text" id="fname" class="form-input" />
           </div>
-          
+
           <div class="form-group">
             <label for="lname">Last name</label>
             <input v-model="draftLastName" type="text" id="lname" class="form-input" />
@@ -40,12 +39,8 @@ import {draftFirstName, draftLastName, updateUserInfo } from '@/userProfile';
           </div>
 
           <div class="button-group">
-            <button type="button" class="btn btn-cancel">
-              Cancel
-            </button>
-            <button type="submit" class="btn btn-save">
-              Save
-            </button>
+            <button type="button" class="btn btn-cancel">Cancel</button>
+            <button type="submit" class="btn btn-save">Save</button>
           </div>
         </form>
       </div>

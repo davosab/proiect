@@ -1,20 +1,20 @@
 <script setup>
-import H2 from '@/components/H2.vue';
-import Input from '@/components/Input.vue';
+import H2 from "@/components/H2.vue"
+import Input from "@/components/Input.vue"
 </script>
 
 <template>
-<main>
-  <div class="form">
-    <H2 title="Sign up" />
-    <Input field="Email" />
-    <Input field="Password" />
-    <Input field="Confirm password" />
-    <button>Sign up</button>
-    <span>Already have an account? <RouterLink to="/log-in">Log in</RouterLink></span>
-  </div>
-  <div class="image"></div>
-</main>
+  <main>
+    <div class="form">
+      <H2 title="Sign up" />
+      <Input field="Email" />
+      <Input field="Password" />
+      <Input field="Confirm password" />
+      <button>Sign up</button>
+      <span>Already have an account? <RouterLink to="/log-in">Log in</RouterLink></span>
+    </div>
+    <div class="image"></div>
+  </main>
 </template>
 
 <style scoped>

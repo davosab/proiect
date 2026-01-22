@@ -1,10 +1,9 @@
 <script setup>
-import Navbar from './components/Navbar.vue';
-import { RouterView, useRoute } from 'vue-router';
-import Footer from "./components/Footer.vue";
+import Navbar from "./components/Navbar.vue"
+import { RouterView, useRoute } from "vue-router"
+import Footer from "./components/Footer.vue"
 
-const route = useRoute();
-
+const route = useRoute()
 </script>
 
 <template>
@@ -23,7 +22,6 @@ const route = useRoute();
       <Footer v-else />
     </div>
   </div>
-
 </template>
 
 <style>

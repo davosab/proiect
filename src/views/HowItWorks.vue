@@ -1,14 +1,12 @@
-<script setup>
-
-</script>
+<script setup></script>
 
 <template>
   <main class="how-page">
     <section class="how-container">
       <h2>How It Works</h2>
       <p class="intro">
-        Whether you're buying or selling a car, Motoro makes it fast, transparent, and easy.  
-        Here’s a step-by-step look at how our platform works.
+        Whether you're buying or selling a car, Motoro makes it fast, transparent, and easy. Here’s
+        a step-by-step look at how our platform works.
       </p>
 
       <div class="steps">
@@ -16,7 +14,8 @@
           <span class="step-number">1</span>
           <h3>Create Your Account</h3>
           <p>
-            Sign up for free in just a few clicks. Your account lets you manage listings, track favorites, and message other users securely.
+            Sign up for free in just a few clicks. Your account lets you manage listings, track
+            favorites, and message other users securely.
           </p>
         </div>
 
@@ -24,8 +23,8 @@
           <span class="step-number">2</span>
           <h3>List or Browse Cars</h3>
           <p>
-            Selling? Upload photos, add car details, and set your price.  
-            Buying? Browse thousands of verified listings with powerful filters to find your perfect match.
+            Selling? Upload photos, add car details, and set your price. Buying? Browse thousands of
+            verified listings with powerful filters to find your perfect match.
           </p>
         </div>
 
@@ -33,7 +32,8 @@
           <span class="step-number">3</span>
           <h3>Connect with Buyers & Sellers</h3>
           <p>
-            Message directly through our secure chat system. We make sure both parties can communicate safely and conveniently.
+            Message directly through our secure chat system. We make sure both parties can
+            communicate safely and conveniently.
           </p>
         </div>
 
@@ -41,8 +41,8 @@
           <span class="step-number">4</span>
           <h3>Seal the Deal</h3>
           <p>
-            Once you’ve agreed on terms, finalize your transaction in person.  
-            Motoro helps ensure transparency by verifying user profiles and listings.
+            Once you’ve agreed on terms, finalize your transaction in person. Motoro helps ensure
+            transparency by verifying user profiles and listings.
           </p>
         </div>
       </div>

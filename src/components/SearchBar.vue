@@ -1,12 +1,10 @@
-<script setup>
-
-</script>
+<script setup></script>
 
 <template>
-<div class="searchbar">
-  <input type="text" />
-  <RouterLink class="btn" to="/listings">Search</RouterLink>
-</div>
+  <div class="searchbar">
+    <input type="text" />
+    <RouterLink class="btn" to="/listings">Search</RouterLink>
+  </div>
 </template>
 
 <style scoped>

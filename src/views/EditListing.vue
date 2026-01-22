@@ -19,7 +19,7 @@
           <div class="image-grid">
             <div class="image-slot upload-slot">
               <span class="upload-text">Upload Images</span>
-              <input ref="imageInput" type="file" multiple accept="image/*" style="display: none;" />
+              <input ref="imageInput" type="file" multiple accept="image/*" style="display: none" />
             </div>
           </div>
         </div>
@@ -42,10 +42,12 @@
     <!-- Description Section -->
     <div class="form-section">
       <label class="form-label">Description</label>
-      <textarea class="description-textarea" rows="6" placeholder="Enter detailed description..."></textarea>
+      <textarea
+        class="description-textarea"
+        rows="6"
+        placeholder="Enter detailed description..."
+      ></textarea>
     </div>
-
-
 
     <!-- Contact Details Section -->
     <div class="form-section">
@@ -58,12 +60,8 @@
 
     <!-- Action Buttons -->
     <div class="button-group">
-      <button type="button" class="btn btn-cancel">
-        Cancel
-      </button>
-      <button type="submit" class="btn btn-publish">
-        Publish
-      </button>
+      <button type="button" class="btn btn-cancel">Cancel</button>
+      <button type="submit" class="btn btn-publish">Publish</button>
     </div>
   </div>
 </template>

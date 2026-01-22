@@ -1,9 +1,9 @@
 <script setup>
-defineProps(["title"]);
+defineProps(["title"])
 </script>
 
 <template>
-<h2 class="text-2xl font-bold">{{title}}</h2>
+  <h2 class="text-2xl font-bold">{{ title }}</h2>
 </template>
 
 <style scoped>

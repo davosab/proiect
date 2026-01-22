@@ -1,22 +1,21 @@
-<script setup>
-
-</script>
+<script setup></script>
 
 <template>
   <main class="about-page">
     <section class="about-container">
       <h2>About Motoro</h2>
       <p class="intro">
-        Welcome to <strong>Motoro</strong> — your trusted platform for finding and selling second-hand cars.
-        We make car trading simple, transparent, and accessible to everyone.
+        Welcome to <strong>Motoro</strong> — your trusted platform for finding and selling
+        second-hand cars. We make car trading simple, transparent, and accessible to everyone.
       </p>
 
       <div class="about-grid">
         <div class="about-section">
           <h3>Our Mission</h3>
           <p>
-            Our mission is to help people find the right car without the hassle. Whether you're buying or selling,
-            Motoro connects car enthusiasts, families, and professionals through a safe and efficient marketplace.
+            Our mission is to help people find the right car without the hassle. Whether you're
+            buying or selling, Motoro connects car enthusiasts, families, and professionals through
+            a safe and efficient marketplace.
           </p>
         </div>
 
@@ -33,8 +32,9 @@
         <div class="about-section">
           <h3>Our Story</h3>
           <p>
-            Founded in 2024, Motoro began as a small project between car enthusiasts who wanted to make buying
-            and selling cars easier. Today, we’ve grown into a thriving community where trust and transparency drive every transaction.
+            Founded in 2024, Motoro began as a small project between car enthusiasts who wanted to
+            make buying and selling cars easier. Today, we’ve grown into a thriving community where
+            trust and transparency drive every transaction.
           </p>
         </div>
       </div>

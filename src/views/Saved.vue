@@ -1,18 +1,18 @@
 <script setup>
-import Header from '@/components/Header.vue';
-import MenuTabs from '@/components/MenuTabs.vue';
-import ListingsCard from '@/components/ListingsCard.vue';
-import { useListingsStore } from '../stores/listings';
+import Header from "@/components/Header.vue"
+import MenuTabs from "@/components/MenuTabs.vue"
+import ListingsCard from "@/components/ListingsCard.vue"
+import { useListingsStore } from "../stores/listings"
 
-const store = useListingsStore();
+const store = useListingsStore()
 </script>
 
 <template>
-<Header title="Saved Listings" />
-<MenuTabs />
+  <Header title="Saved Listings" />
+  <MenuTabs />
   <div class="bg">
     <div class="grid">
-    <ListingsCard v-for="listing in store.savedListings" :car="listing" :key="listing.id"/>
+      <ListingsCard v-for="listing in store.savedListings" :car="listing" :key="listing.id" />
     </div>
   </div>
 </template>

@@ -1,5 +1,5 @@
 <script setup>
-defineProps(["faq"]);
+defineProps(["faq"])
 </script>
 
 <template>

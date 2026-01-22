@@ -1,12 +1,12 @@
 <script setup>
-defineProps(["field"]);
+defineProps(["field"])
 </script>
 
 <template>
-<div class="input-container">
-  <label for="">{{ field }}</label>
-  <input type="text" :id="field">
-</div>
+  <div class="input-container">
+    <label for="">{{ field }}</label>
+    <input type="text" :id="field" />
+  </div>
 </template>
 
 <style scoped>

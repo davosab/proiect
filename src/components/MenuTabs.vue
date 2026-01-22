@@ -1,14 +1,12 @@
-<script setup>
-
-</script>
+<script setup></script>
 
 <template>
-<div class="tabs">
-      <RouterLink to="my-listings" class="tab-button">Listings</RouterLink>
-      <RouterLink to="messages" class="tab-button">Messages</RouterLink>
-      <RouterLink to="profile" class="tab-button ">Profile</RouterLink>
-      <RouterLink to="/saved" class="tab-button ">Saved Listings</RouterLink>
-    </div>
+  <div class="tabs">
+    <RouterLink to="my-listings" class="tab-button">Listings</RouterLink>
+    <RouterLink to="messages" class="tab-button">Messages</RouterLink>
+    <RouterLink to="profile" class="tab-button">Profile</RouterLink>
+    <RouterLink to="/saved" class="tab-button">Saved Listings</RouterLink>
+  </div>
 </template>
 
 <style scoped>
@@ -38,7 +36,7 @@
 }
 
 .tab-button.active::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: 0;
   left: 0;

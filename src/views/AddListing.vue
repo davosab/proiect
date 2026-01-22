@@ -1,20 +1,20 @@
 <script setup>
-  import { useListingsStore } from '@/stores/listings';
-  import { ref } from 'vue';
+import { useListingsStore } from "@/stores/listings"
+import { ref } from "vue"
 
-  const listingsStore = useListingsStore();
-  const car = ref({
-    id: crypto.randomUUID(), 
-    colour: "", 
-    title: "", 
-    fuel: "", 
-    year: null,
-    km: "", 
-    chassis: "", 
-    price: null, 
-    saved: false, 
-    country: "romania"
-  });
+const listingsStore = useListingsStore()
+const car = ref({
+  id: crypto.randomUUID(),
+  colour: "",
+  title: "",
+  fuel: "",
+  year: null,
+  km: "",
+  chassis: "",
+  price: null,
+  saved: false,
+  country: "romania"
+})
 </script>
 
 <template>
@@ -29,7 +29,12 @@
         <!-- Title Section -->
         <div class="form-section">
           <label class="form-label">Title</label>
-          <input v-model="car.title" type="text" class="form-input" placeholder="Enter listing title" />
+          <input
+            v-model="car.title"
+            type="text"
+            class="form-input"
+            placeholder="Enter listing title"
+          />
         </div>
 
         <!-- Images Section -->
@@ -38,7 +43,7 @@
           <div class="image-grid">
             <div class="image-slot upload-slot">
               <span class="upload-text">Upload Images</span>
-              <input ref="imageInput" type="file" multiple accept="image/*" style="display: none;" />
+              <input ref="imageInput" type="file" multiple accept="image/*" style="display: none" />
             </div>
           </div>
         </div>
@@ -63,10 +68,12 @@
     <!-- Description Section -->
     <div class="form-section">
       <label class="form-label">Description</label>
-      <textarea class="description-textarea" rows="6" placeholder="Enter detailed description..."></textarea>
+      <textarea
+        class="description-textarea"
+        rows="6"
+        placeholder="Enter detailed description..."
+      ></textarea>
     </div>
-
-
 
     <!-- Contact Details Section -->
     <div class="form-section">
@@ -79,9 +86,7 @@
 
     <!-- Action Buttons -->
     <div class="button-group">
-      <button type="button" class="btn btn-cancel">
-        Cancel
-      </button>
+      <button type="button" class="btn btn-cancel">Cancel</button>
       <button @click="listingsStore.addListing(car)" type="submit" class="btn btn-publish">
         Publish
       </button>

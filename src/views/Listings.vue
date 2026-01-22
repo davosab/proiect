@@ -1,32 +1,27 @@
 <script setup>
 import ListingsGrid from "../components/ListingsGrid.vue"
-import { ref, computed, watch } from "vue";
-import SearchBar from "@/components/SearchBar.vue";
-import { useListingsStore } from "../stores/listings";
+import { ref, computed, watch } from "vue"
+import SearchBar from "@/components/SearchBar.vue"
+import { useListingsStore } from "../stores/listings"
 
-const store = useListingsStore();
-const selectedColour = ref("");
+const store = useListingsStore()
+const selectedColour = ref("")
 
 const filteredList = computed(() => {
-  if (selectedColour.value === "") return store.listings;
+  if (selectedColour.value === "") return store.listings
 
   return store.listings.filter(car => car.colour === selectedColour.value)
+})
 
-});
+const filteredCount = computed(() => filteredList.value.length)
 
-const filteredCount = computed(() =>
-  filteredList.value.length
-);
-
-const filtersJustChanged = ref(false);
+const filtersJustChanged = ref(false)
 
 watch(selectedColour, (newColour, oldColour, onCleanup) => {
-  filtersJustChanged.value = true;
-  const disappear = setTimeout(() => filtersJustChanged.value = false, 2000);
-  onCleanup(() => clearTimeout(disappear));
-});
-
-
+  filtersJustChanged.value = true
+  const disappear = setTimeout(() => (filtersJustChanged.value = false), 2000)
+  onCleanup(() => clearTimeout(disappear))
+})
 </script>
 
 <template>
@@ -90,7 +85,7 @@ main {
   align-self: flex-start;
 }
 
-.filters-messages>* {
+.filters-messages > * {
   background: rgb(203, 203, 203);
   padding: 0.2em 0.5em;
 }

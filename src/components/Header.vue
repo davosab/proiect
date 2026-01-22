@@ -1,10 +1,10 @@
 <script setup>
-defineProps(["title"]);
+defineProps(["title"])
 </script>
 
 <template>
-<div class="header">
-    <h1 class="title">{{title}}</h1>
+  <div class="header">
+    <h1 class="title">{{ title }}</h1>
   </div>
 </template>
 

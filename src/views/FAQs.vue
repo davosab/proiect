@@ -1,6 +1,6 @@
 <script setup>
-import { faqs } from '@/faqs';
-import Faq from '@/components/Faq.vue';
+import { faqs } from "@/faqs"
+import Faq from "@/components/Faq.vue"
 </script>
 
 <template>
@@ -8,7 +8,7 @@ import Faq from '@/components/Faq.vue';
     <h2 class="text-2xl font-bold">Frequently Asked Questions</h2>
     <div class="faqs-container" v-for="(item, index) in faqs" :key="index">
       <Faq :faq="item" />
-      <br>
+      <br />
     </div>
   </section>
 </template>

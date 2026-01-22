@@ -1,22 +1,22 @@
 <script setup>
-import H2 from '@/components/H2.vue';
-import { ref } from 'vue';
-import { useCredentialsStore } from '@/stores/credentials';
-import { useLoggedStatus } from '@/stores/loggedStatus';
-import { useRouter } from 'vue-router';
+import H2 from "@/components/H2.vue"
+import { ref } from "vue"
+import { useCredentialsStore } from "@/stores/credentials"
+import { useLoggedStatus } from "@/stores/loggedStatus"
+import { useRouter } from "vue-router"
 
-const store = useCredentialsStore();
-const loggedStatus = useLoggedStatus();
-const router = useRouter();
-const email = ref("");
-const password = ref("");
+const store = useCredentialsStore()
+const loggedStatus = useLoggedStatus()
+const router = useRouter()
+const email = ref("")
+const password = ref("")
 
 const handleLogin = () => {
   if (store.isValid(email.value, password.value)) {
-    router.push("/add-listing");
-    loggedStatus.loggedIn = true;
+    router.push("/add-listing")
+    loggedStatus.loggedIn = true
   }
-  return;
+  return
 }
 </script>
 
@@ -26,11 +26,11 @@ const handleLogin = () => {
       <H2 title="Log in" />
       <div class="input-container">
         <label for="email">Email</label>
-        <input v-model="email" type="text" id="email">
+        <input v-model="email" type="text" id="email" />
       </div>
       <div class="input-container">
         <label for="password">Password</label>
-        <input v-model="password" type="text" id="password">
+        <input v-model="password" type="text" id="password" />
       </div>
       <button type="submit">Log in</button>
       <span>Dont have an account? <RouterLink to="/sign-up">Sign up</RouterLink></span>

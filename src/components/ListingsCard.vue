@@ -1,23 +1,23 @@
 <script setup>
-defineProps(["car"]);
-const emit = defineEmits(["click"]);
-import {useListingsStore} from "../stores/listings";
+defineProps(["car"])
+const emit = defineEmits(["click"])
+import { useListingsStore } from "../stores/listings"
 
-const store = useListingsStore();
+const store = useListingsStore()
 </script>
 
 <template>
-<div class="card" @click="$emit('click', car.id)">
-  <div class="image">
-    <div class="heart" @click.stop="store.toggleSaved(car.id)">
-      {{ car.saved ? "❤️" : "🤍" }}
+  <div class="card" @click="$emit('click', car.id)">
+    <div class="image">
+      <div class="heart" @click.stop="store.toggleSaved(car.id)">
+        {{ car.saved ? "❤️" : "🤍" }}
+      </div>
     </div>
+    <p class="when">Posted 23 hours ago</p>
+    <h4>{{ car.title }}</h4>
+    <p class="info">{{ car.year }} | {{ car.fuel }} | {{ car.km }} | {{ car.chassis }}</p>
+    <p class="price">${{ car.price.toLocaleString() }}</p>
   </div>
-  <p class="when">Posted 23 hours ago</p>
-  <h4>{{ car.title }}</h4>
-  <p class="info">{{ car.year }} | {{ car.fuel }} | {{ car.km }} | {{ car.chassis }}</p>
-  <p class="price">${{ car.price.toLocaleString() }}</p>
-</div>
 </template>
 
 <style scoped>
@@ -29,12 +29,14 @@ const store = useListingsStore();
   background: white;
   cursor: pointer;
 }
+
 .image {
   min-height: 60px;
   aspect-ratio: 100 / 60;
   background: gray;
   position: relative;
 }
+
 .heart {
   position: absolute;
   height: 1.5rem;
@@ -42,9 +44,12 @@ const store = useListingsStore();
   right: 1rem;
   top: 1rem;
 }
-.when, .info {
+
+.when,
+.info {
   font-size: 0.75rem;
 }
+
 .price {
   font-size: 1.5rem;
   margin: 1rem;

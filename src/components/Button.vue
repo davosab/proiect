@@ -1,9 +1,9 @@
 <script setup>
-defineProps(["text"]);
+defineProps(["text"])
 </script>
 
 <template>
-<button>{{ text }}</button>
+  <button>{{ text }}</button>
 </template>
 
 <style scoped>

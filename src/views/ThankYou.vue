@@ -1,21 +1,17 @@
-<script setup>
-
-</script>
+<script setup></script>
 
 <template>
   <main class="thank-page">
     <section class="thank-container">
       <h2>Thank You!</h2>
       <p>
-        Your message has been successfully sent.  
-        We appreciate you taking the time to reach out, and we’ll be in touch with you shortly.
+        Your message has been successfully sent. We appreciate you taking the time to reach out, and
+        we’ll be in touch with you shortly.
       </p>
       <RouterLink to="/" class="back-btn">Return to Home</RouterLink>
     </section>
   </main>
 </template>
-
-
 
 <style scoped>
 .thank-page {

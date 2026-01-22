@@ -1,19 +1,19 @@
 <script setup>
 import ListingsGrid from "../components/ListingsGrid.vue"
-import Header from "@/components/Header.vue";
-import MenuTabs from "@/components/MenuTabs.vue";
-import { useListingsStore } from "@/stores/listings";
+import Header from "@/components/Header.vue"
+import MenuTabs from "@/components/MenuTabs.vue"
+import { useListingsStore } from "@/stores/listings"
 
-const store = useListingsStore();
+const store = useListingsStore()
 </script>
 
 <template>
-  <Header title="My Listings"/>
+  <Header title="My Listings" />
   <MenuTabs />
-  
+
   <main>
     <aside class="filters"></aside>
-    <ListingsGrid :list="store.listings"/>
+    <ListingsGrid :list="store.listings" />
   </main>
 </template>
 

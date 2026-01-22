@@ -39,4 +39,4 @@ export const faqs = [
     q: "Which areas do you serve?",
     a: "Motoro currently lists vehicles from sellers across the European Union, but anyone can browse and contact sellers. We’re working to expand local filtering options soon."
   }
-];
+]

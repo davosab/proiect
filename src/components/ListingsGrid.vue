@@ -1,18 +1,20 @@
 <script setup>
 import ListingsCard from "./ListingsCard.vue"
-import { goToDetails } from '@/router';
+import { goToDetails } from "@/router"
 
-defineProps(["list"]);
-
+defineProps(["list"])
 </script>
 
 <template>
   <div v-if="list.length > 0" class="grid">
-    <ListingsCard @click="goToDetails(car.id)" v-for="(car, index) in list" :car="car" :key="index" />
+    <ListingsCard
+      @click="goToDetails(car.id)"
+      v-for="(car, index) in list"
+      :car="car"
+      :key="index"
+    />
   </div>
-  <div v-else class="no-matches-message">
-    No listings match your filters.
-  </div>
+  <div v-else class="no-matches-message">No listings match your filters.</div>
 </template>
 
 <style scoped>

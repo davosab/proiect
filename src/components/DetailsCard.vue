@@ -1,41 +1,44 @@
 <script setup>
-import Button from './Button.vue';
-import { ref } from 'vue';
-import { computed } from 'vue';
-import { useListingsStore } from "../stores/listings";
-import { useShippingStore } from '@/stores/shipping';
-import { useSettingsStore } from '@/stores/settings';
+import Button from "./Button.vue"
+import { ref } from "vue"
+import { computed } from "vue"
+import { useListingsStore } from "../stores/listings"
+import { useShippingStore } from "@/stores/shipping"
+import { useSettingsStore } from "@/stores/settings"
 
-const listingsStore = useListingsStore();
-const shippingStore = useShippingStore();
-const settingsStore = useSettingsStore();
+const listingsStore = useListingsStore()
+const shippingStore = useShippingStore()
+const settingsStore = useSettingsStore()
 
-const { car } = defineProps(["car"]);
-const showNumber = ref(false);
+const { car } = defineProps(["car"])
+const showNumber = ref(false)
 
 const finalPrice = computed(() => {
-  let price = car.price;
+  let price = car.price
   if (car.country != "romania") {
-    let shippingTax = shippingStore.countryTaxes[car.country];
-    price += shippingTax;
+    let shippingTax = shippingStore.countryTaxes[car.country]
+    price += shippingTax
     console.log(car.title, shippingTax)
   }
-  return price;
-});
+  return price
+})
 </script>
 
 <template>
   <div v-if="car" class="main">
     <div class="carousel"></div>
     <div class="info-card">
-      <div @click="listingsStore.toggleSaved(car.id)" class="save">{{ car.saved ? "❤️ saved" : "🤍 save" }}</div>
+      <div @click="listingsStore.toggleSaved(car.id)" class="save">
+        {{ car.saved ? "❤️ saved" : "🤍 save" }}
+      </div>
       <h2>{{ car.title }}</h2>
       <p>Used - {{ car.year }}</p>
       <p class="price">
         ${{ car.price.toLocaleString() }}
-        <span class="currency">{{settingsStore.currency}}</span>
-        <span class="shipping-note" v-if="car.country != 'romania'"> + shipping = ${{ finalPrice }}</span>
-
+        <span class="currency">{{ settingsStore.currency }}</span>
+        <span class="shipping-note" v-if="car.country != 'romania'">
+          + shipping = ${{ finalPrice }}</span
+        >
       </p>
       <RouterLink to="/seller-listings">
         <Button text="More from seller" class="btn-small" />
@@ -45,7 +48,10 @@ const finalPrice = computed(() => {
       </RouterLink>
       <div class="contact-btns">
         <Button text="Message" />
-        <Button @click="showNumber = true" :text="showNumber ? '0772 068 318' : 'Show tel. number'" />
+        <Button
+          @click="showNumber = true"
+          :text="showNumber ? '0772 068 318' : 'Show tel. number'"
+        />
       </div>
     </div>
   </div>
